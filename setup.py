@@ -9,7 +9,7 @@ setup(name='u8timeseries',
       license='Apache License 2.0',
       packages=['u8timeseries'],
       install_requires=[
-          'dateutils',
+          'python-dateutil',
           'statsmodels',
           'pyramid-arima',
           'fbprophet',

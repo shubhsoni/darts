@@ -1,4 +1,4 @@
-from dateutils import relativedelta
+from dateutil.relativedelta import *
 import pandas as pd
 
 

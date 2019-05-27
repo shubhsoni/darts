@@ -235,7 +235,7 @@ class SupervisedTimeSeriesModel:
 
         # Prepare generic fit() and predict() calls to be used from backtest()
         def fit_fn(*args):
-            return self.fit(*args, feature_columns)
+            return self.fit(*(args + [feature_columns]))
 
         def predict_fn(val_set, _):
             return self.predict(val_set, feature_columns)

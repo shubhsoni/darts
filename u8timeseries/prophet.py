@@ -6,9 +6,11 @@ import fbprophet
 
 class Prophet(TimeseriesModel):
 
-    def __init__(self):
+    def __init__(self, weekly_seasonality=False, daily_seasonality=False):
         super(Prophet, self).__init__()
         self.model = None
+        self.weekly_seasonality = weekly_seasonality
+        self.daily_seasonality = daily_seasonality
 
     def __str__(self):
         return 'Prophet'
@@ -25,7 +27,7 @@ class Prophet(TimeseriesModel):
         })
 
         # TODO: user-provided seasonalities, or "auto" based on stepduration
-        self.model = fbprophet.Prophet(weekly_seasonality=False, daily_seasonality=False)
+        self.model = fbprophet.Prophet(weekly_seasonality=self.weekly_seasonality, daily_seasonality=self.daily_seasonality)
         self.model.fit(in_df)
 
     def predict(self, n):
