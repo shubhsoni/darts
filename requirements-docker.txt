@@ -11,3 +11,5 @@ tqdm
 joblib
 plotly
 fbprophet
+tensorflow
+hyperopt
